@@ -46,7 +46,7 @@ const CreatePost: React.FC<{}> = ({}) => {
                         type="submit" 
                         isLoading={isSubmitting} 
                         colorScheme="teal"
-                        >
+                        bgColor="teal.300">
                             create post
                          </Button>
                     </Form>

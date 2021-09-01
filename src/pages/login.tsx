@@ -34,7 +34,8 @@ const Login: React.FC<{}> = ({}) => {
                 }
             }}>
                {({isSubmitting}) => (
-                   <Form>
+                
+                   <Form >
                        <InputField 
                         name="usernameOrEmail"
                         placeholder="username or email"
@@ -61,8 +62,7 @@ const Login: React.FC<{}> = ({}) => {
                        >
                            login
                         </Button>
-                   </Form>
-               )}
+                   </Form>               )}
            </Formik> 
         </Wrapper>        
         );

@@ -29,6 +29,7 @@ const Index = () => {
   return(
   <Layout>
   {!data && fetching ? (
+    <Flex justify="center">
       <Spinner
       thickness="4px"
       speed="0.65s"
@@ -36,10 +37,11 @@ const Index = () => {
       color="blue.500"
       size="xl"
       />
+      </Flex>
     ) : (
-      <Stack spacing={8}>
+      <Stack spacing={8} >
       {data!.posts.posts.map((p) => !p ? null :(
-        <Flex key={p.id} p={5} shadow="md"  borderRadius="md" borderWidth="1px">
+        <Flex key={p.id} p={5} shadow="md"  borderRadius="md" borderWidth="1px" bgColor="white">
           <UpdootSection post={p} />
           <Box flex={1}>
             <NextLink href="/post/[id]" as={`/post/${p.id}`}>
@@ -64,7 +66,7 @@ const Index = () => {
     )}
     {data && data.posts.hasMore ? (
     <Flex>
-    <Button onClick={() => {
+    <Button colorScheme="teal" onClick={() => {
       setVariables({
         limit: variables.limit,
         cursor: data.posts.posts[data.posts.posts.length -1].createdAt
@@ -77,4 +79,4 @@ const Index = () => {
   )
 }
 
-export default withUrqlClient(createUrqlCleint, {ssr: true}) (Index)
+export default withUrqlClient(createUrqlCleint, {ssr: false}) (Index)

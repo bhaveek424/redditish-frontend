@@ -30,7 +30,7 @@ const Register: React.FC<registerProps> = ({}) => {
                 }
             }}>
                {({isSubmitting}) => (
-                   <Form>
+                   <Form >
                        <InputField 
                         name="username"
                         placeholder="username"
